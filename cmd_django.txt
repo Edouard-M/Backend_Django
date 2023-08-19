@@ -1,0 +1,7 @@
+Venv :
+Create venv : python -m venv .env
+Activate venv : source .env/Scripts/activate
+
+python -m django --version (get the django version)
+
+pip install -r requirements.txt
