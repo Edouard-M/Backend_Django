@@ -5,3 +5,16 @@ Activate venv : source .env/Scripts/activate
 python -m django --version (get the django version)
 
 pip install -r requirements.txt
+
+
+Django :
+Install Django: pip install django
+Create Django project : django-admin startproject project_name
+Create api : python manage.py startapp api
+Create admin : python manage.py createsuperuser
+
+Run Server : python manage.py runserver
+Create Migration : python manage.py makemigrations
+Migration : python manage.py migrate
+Fix Cors Header Error : python -m pip install django-cors-headers
+link : https://github.com/adamchainz/django-cors-headers/tree/main
