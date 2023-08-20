@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.views.defaults import server_error
+# from django.views.defaults import server_error
 from .views import test_view, index
 
 urlpatterns = [
