@@ -10,6 +10,11 @@
 
     <h1>{{ title }}</h1>
 
+    {% for note in all_notes %}
+        <a href={{ note.pk }}> {{ note.title }} </a>
+    {% endfor %}
+
+    <a class="button" href="{% url 'add_note' %}">add new</a>
     <a class="button" href="{% url 'index' %}">return home</a>
 
 </body>
