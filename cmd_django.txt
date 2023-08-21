@@ -20,3 +20,6 @@ Create Migration : python manage.py makemigrations
 Migration : python manage.py migrate
 Fix Cors Header Error : python -m pip install django-cors-headers
 link : https://github.com/adamchainz/django-cors-headers/tree/main
+
+If CSS style doesn't apply:
+ByPass Cache : ctrl + F5

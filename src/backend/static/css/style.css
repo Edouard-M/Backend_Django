@@ -1,3 +1,17 @@
+:root {
+    --color-main: #E9A072;
+    --color-second: #73BBC5;
+    --color-text: #45505B;
+    --color-white: #FFFFFF;
+    --color-debug: #006400;
+    --color-grey: #F2F3F5;
+    --font-Raleway: "Raleway", sans-serif;
+    --font-Poppins: "Poppins", sans-serif;
+
+    --font-Open: "Open sans", sans-serif;
+    --font-Bitter: "Passion One", sans-serif;
+  }
+
 body{
     background: white;
     color: grey;
@@ -16,6 +30,22 @@ h2{
 
 a{
     color: #73BBC5;
+    text-decoration: none;
+}
+
+.button{
+    background: var(--color-second);
+    color: white;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 5rem;
+    margin: 0.5rem 0rem 0.5rem 0rem;
+}
+
+.button:hover{
+    background: var(--color-main);
+    cursor: pointer;
+    transition: all 0.5s;
+    scale: 1.1;
 }
 
 .weather_main{
@@ -49,7 +79,7 @@ a{
 }
 
 .weather_h2{
-    color: #73BBC5;
+    color: var(--color-second);
 }
 
 .weather_logo{
