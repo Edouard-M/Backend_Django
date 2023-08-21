@@ -6,6 +6,7 @@ python -m django --version (get the django version)
 
 pip install -r requirements.txt
 
+pip freeze > requirements.txt
 
 Django :
 Install Django: pip install django

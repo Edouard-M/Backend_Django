@@ -17,10 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 # from django.views.defaults import server_error
-from .views import test_view, index
+from .views import test_view, index, weather
+
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', index, name="index"),
     path('admin/', admin.site.urls),
     path('test/', test_view, name="test"),
+    path('weather/', weather, name="weather"),
 ]
