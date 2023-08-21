@@ -1,22 +1,18 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from backend.weather.weather_utils import WEATHER_CONTEXT, compare_weather, fetch_weather, post_weather_api
+from backend.weather.weather_utils import WEATHER_CONTEXT, post_weather_api
 
 
 def index(request):
-    return render(request, "index.html", context={"title": "Backend"})
-
-
-def notes(request):
-    return render(request, "notes_app.html", context={"title": "Notes App"})
+    return render(request, "backend/index.html", context={"title": "Backend"})
 
 
 def weather(request):
     if request.method == "POST":
         post_weather_api(request)
 
-    return render(request, "weather.html", WEATHER_CONTEXT)
+    return render(request, "backend/weather.html", WEATHER_CONTEXT)
 
 
 def test_view(request):

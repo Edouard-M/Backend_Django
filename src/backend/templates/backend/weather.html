@@ -19,7 +19,7 @@
             </form>
             {% if weather_data1 %}
                 <div class="weather_city_container">
-                    {% include 'city_weather.html' with weather_data=weather_data1 daily_forecasts=daily_forecasts1 %}
+                    {% include 'backend/city_weather.html' with weather_data=weather_data1 daily_forecasts=daily_forecasts1 %}
                 </div>
             {% endif %}
         </div>
@@ -32,7 +32,7 @@
             </form>
             {% if weather_data2%}
                 <div class="weather_city_container">
-                    {% include 'city_weather.html' with weather_data=weather_data2 daily_forecasts=daily_forecasts2 %}
+                    {% include 'backend/city_weather.html' with weather_data=weather_data2 daily_forecasts=daily_forecasts2 %}
                 </div>
             {% endif %}
         </div>
