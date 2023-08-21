@@ -15,6 +15,7 @@ WEATHER_CONTEXT = {
     "title": "Weather App",
     "weather_data1": None,
     "weather_data2": None,
+    "temperature_diff": None,
 }
 
 
@@ -36,6 +37,9 @@ def weather(request):
             weather_data2 = fetch_weather(city=city2, api_key=API_KEY, current_weather_url=current_weather_url)
             WEATHER_CONTEXT["weather_data2"] = weather_data2
 
+        if WEATHER_CONTEXT.get("weather_data1") and WEATHER_CONTEXT.get("weather_data2"):
+            WEATHER_CONTEXT["temperature_diff"] = compare_weather(city1=WEATHER_CONTEXT.get("weather_data1"), city2=WEATHER_CONTEXT.get("weather_data2"))
+
     return render(request, "weather.html", WEATHER_CONTEXT)
 
 
@@ -46,7 +50,17 @@ def fetch_weather(city, api_key, current_weather_url):
         "city": city,
         "temperature": round(response['main']['temp'] - 273.15, 1),
         "description": response['weather'][0]['description'],
-        "icon": response['weather'][0]['icon']
+        "icon": response['weather'][0]['icon'],
     }
 
     return weather_data
+
+
+def compare_weather(city1, city2):
+
+    temp_diff = round(city1.get("temperature") - city2.get("temperature"), 1)
+
+    if temp_diff > 0:
+        temp_diff = "+ " + str(temp_diff)
+
+    return temp_diff
